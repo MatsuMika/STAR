@@ -14,5 +14,6 @@ class Users::CartProductsController < ApplicationController
   def destroy_all
   end
 
+  #ユーザーのカートのアイテムを取り出す
   def set_cart_product
 end
