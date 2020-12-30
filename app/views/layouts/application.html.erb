@@ -10,12 +10,9 @@
   </head>
   <body>
     <header>
-      <% if customer_signed_in? %>
-        <span class="user-name">ようこそ<%= current_user.last_name+current_customer.first_name %>さん</span>
-      <% end %>
       <div class='header-main'>
         <%= link_to root_path do %>
-          <span class="header-name">NAGANOCAKE</span>
+          <span class="header-name">STAR</span>
         <% end %>
 
         <nav>
@@ -33,6 +30,7 @@
               <li class="nav-item">
                 <%= link_to "ログアウト", destroy_user_session_path, class: "nav-link", :method=>:delete %>
               </li>
+
             <% elsif seller_signed_in? %>
               <li class="nav-item">
                 <%= link_to "商品一覧", sellers_products_path, class: "nav-link" %>
@@ -49,6 +47,7 @@
               <li class="nav-item">
                 <%= link_to "ログアウト", destroy_seller_session_path, class: "nav-link", :method=>:delete %>
               </li>
+
             <% else %>
               <li class="nav-item">
                 <%= link_to "About", users_about_path, class: "nav-link" %>
