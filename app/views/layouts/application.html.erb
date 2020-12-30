@@ -8,8 +8,66 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <header>
+      <% if customer_signed_in? %>
+        <span class="user-name">ようこそ<%= current_user.last_name+current_customer.first_name %>さん</span>
+      <% end %>
+      <div class='header-main'>
+        <%= link_to root_path do %>
+          <span class="header-name">NAGANOCAKE</span>
+        <% end %>
+
+        <nav>
+          <ul class="nav-list">
+            <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to "マイページ", users_my_page_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "商品一覧", products_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "カート", product_cart_products_path(:roduct_id), class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "ログアウト", destroy_user_session_path, class: "nav-link", :method=>:delete %>
+              </li>
+            <% elsif seller_signed_in? %>
+              <li class="nav-item">
+                <%= link_to "商品一覧", sellers_products_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "会員一覧", sellers_users_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "注文履歴一覧", sellers_orders_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "ジャンル一覧", sellers_categories_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "ログアウト", destroy_seller_session_path, class: "nav-link", :method=>:delete %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "About", users_about_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "商品一覧", products_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+              </li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

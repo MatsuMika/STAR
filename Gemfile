@@ -54,6 +54,7 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
+  gem 'rspec-rails'
   # Easy installation and use of chromedriver to run system tests with Chrome
   #gem 'chromedriver-helper'
 end
@@ -63,3 +64,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 gem 'dotenv-rails'
+gem 'pry-byebug'
+gem 'font-awesome-sass'
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile-mini_magick"
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.2.1'
