@@ -53,10 +53,10 @@
                 <%= link_to "About", users_about_path, class: "nav-link" %>
               </li>
               <li class="nav-item">
-                <%= link_to "商品一覧", products_path, class: "nav-link" %>
+                <%= link_to "困り事一覧", products_path, class: "nav-link" %>
               </li>
               <li class="nav-item">
-                <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
+                <%= link_to "会員登録", new_user_registration_path, class: "nav-link" %>
               </li>
               <li class="nav-item">
                 <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
@@ -70,5 +70,12 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
+    <footer>
+      <div>
+        <p class ="footer-text">
+          Copyright © 2021 STAR Inc. All Rights Reserved.
+        </p>
+      <div>
+    </footer>
   </body>
 </html>

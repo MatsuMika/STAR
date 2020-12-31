@@ -6,9 +6,11 @@ Rails.application.routes.draw do
     registrations: 'sellers/registrations'
   }
 
-  namespace :sellerss do
+  namespace :sellers do
     root 'users#top'
     resources :users, only: [:index, :show, :edit, :update]
+    resources :products, only: [:index, :new, :create,:show, :edit, :update]
+    resources :categories, only: [:index, :create, :edit, :update, :destroy]
   end
 
 
