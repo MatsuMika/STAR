@@ -1,0 +1,70 @@
+<div class="field">
+  <div class ="row">
+    <div class="col-md-2 offset-md-2 text-right">
+      <p>名前</p>
+    </div>
+    <div class ="col-md-2">
+      <%= f.text_field :last_name, class: "form-control", placeholder:"姓", autofocus: true, autocomplete: "last_name" %>
+    </div>
+    <div class ="col-md-2">
+      <%= f.text_field :first_name, class: "form-control", placeholder:"名", autofocus: true, autocomplete: "first_name" %>
+    </div>
+  </div>
+</div>
+<div class="field">
+  <div class="row">
+    <div class="col-md-2 offset-md-2 text-right">
+      <p>フリガナ</p>
+    </div>
+    <div class="col-md-2">
+      <%= f.text_field :last_name_kana, class: "form-control", placeholder:"セイ", autofocus: true, autocomplete: "last_name_kana" %>
+    </div>
+    <div class="col-md-2">
+      <%= f.text_field :first_name_kana, class: "form-control", placeholder:"メイ", autofocus: true, autocomplete: "first_name_kana" %>
+    </div>
+  </div>
+</div>
+
+<div class="field">
+  <div class="row">
+    <div class="col-md-2 offset-md-2 text-right">
+      <p>メールアドレス</p>
+    </div>
+    <div class="col-md-4">
+      <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email" %>
+    </div>
+  </div>
+</div>
+
+<div class="field">
+  <div class="row">
+    <div class="col-md-2 offset-md-2 text-right">
+      <p>電話番号(ハイフンなし)</p>
+    </div>
+    <div class="col-md-2">
+      <%= f.text_field :phone_number, class: "form-control", placeholder:"例：09012345678", autofocus: true, autocomplete: "phone_number" %>
+    </div>
+  </div>
+</div>
+
+<div class="field">
+  <div class="row">
+    <div class="col-md-2 offset-md-2 text-right">
+      <p>郵便番号(ハイフンなし)</p>
+    </div>
+    <div class="col-md-2">
+      <%= f.text_field :postal_code, class: "form-control", placeholder:"例：1230000", autofocus: true, autocomplete: "postal_code" %>
+    </div>
+  </div>
+</div>
+
+<div class="field">
+  <div class="row">
+    <div class="col-md-2 offset-md-2 text-right">
+      <p>住所</p>
+    </div>
+    <div class="col-md-4">
+      <%= f.text_field :address, class: "form-control", autofocus: true, autocomplete: "address" %>
+    </div>
+  </div>
+</div>
