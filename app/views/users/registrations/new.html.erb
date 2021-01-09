@@ -11,29 +11,29 @@
 
     <%= render "user_form", f: f %>
 
-    <div class="field">
-      <div class="row">
-        <div class="col-md-2 offset-md-2 text-right">
-          <p>パスワード(6文字以上)</p>
-        </div>
-        <div class="col-md-3">
-          <% if @minimum_password_length %>
-          <% end %>
-          <%= f.password_field :password, class: "form-control", autocomplete: "new-password" %>
-        </div>
-      </div>
+<div class="field">
+  <div class="row">
+    <div class="col-md-2 offset-md-2 text-right">
+      <p>パスワード(6文字以上)</p>
+     </div>
+    <div class="col-md-2">
+      <% if @minimum_password_length %>
+      <% end %>
+      <%= f.password_field :password, class: "form-control", autocomplete: "new-password" %>
     </div>
+  </div>
+</div>
 
-     <div class="field">
-      <div class="row">
-        <div class="col-md-2 offset-md-2 text-right">
-          <p>パスワード(確認用)</p>
-        </div>
-        <div class="col-md-3">
-          <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password" %>
-        </div>
-      </div>
+<div class="field">
+  <div class="row">
+    <div class="col-md-2 offset-md-2 text-right">
+      <p>パスワード(確認用)</p>
     </div>
+    <div class="col-md-2">
+      <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password" %>
+    </div>
+  </div>
+</div>
 
     <div class="row">
       <div class="col-md-4 offset-md-4 mb-3">
