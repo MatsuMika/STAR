@@ -1,0 +1,53 @@
+<%= form_with model:product, local: true do |item| %>
+
+  <div class= "row">
+    <div class= "col-md-4  text-center">
+      <%= item.attachment_field :image %>
+    </div>
+
+    <div class= "col-md-8 text-center">
+
+      <div class= "row">
+        <div class= "col-md-4 text-left">
+          <span>アイテム名</span>
+        </div>
+        <div class= "col-md-8">
+            <%=  item.text_field :name, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class= "row">
+        <div class= "col-md-4 text-left">
+          <span>アイテム説明</span>
+        </div>
+        <div class= "col-md-8">
+          <%=  item.text_area :introduction, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class= "row">
+        <div class= "col-md-4 text-left">
+          <span>ジャンル</span>
+        </div>
+        <div class= "col-md-8">
+            <%= item.collection_select :category_id, Category.all, :id, :category_name, {prompt: "選択してください"},{ class: "form-control"} %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 text-left">
+          <span>税抜価格</span>
+        </div>
+        <div class="col-md-8">
+          <%=  item.text_field :price, class: "form-control" %>
+        </div>
+      </div>
+
+    <div class="row">
+      <div class="col-md-10 text-right">
+        <%= item.submit, class: "btn btn-primary" %>
+      </div>
+    </div>
+
+  </div>
+<% end %>
