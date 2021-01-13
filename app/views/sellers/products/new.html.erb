@@ -1,13 +1,10 @@
-<div class="container-fluid">
+<div class= "container-fluid">
 
   <div class= "row">
     <h2 class= "col-md-2 offset-md-5">アイテム新規登録
     </h2>
-    <% if @product.errors.any? %>
-      <%= render "admins/shared/error_messages", resource: product %>
-      <% end %>>
   </div>
 
-  <%= render 'item_form', item: item %>
+  <%= render "sellers/products/item_form", product: @product %>
 
 </div>
