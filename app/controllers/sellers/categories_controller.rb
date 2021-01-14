@@ -42,7 +42,6 @@ class Sellers::CategoriesController < ApplicationController
 
 
   private
-
   def category_params
     params.require(:category).permit(:category_name,:is_active)
   end
