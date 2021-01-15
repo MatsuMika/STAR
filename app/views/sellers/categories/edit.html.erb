@@ -1,2 +1,14 @@
-<h1>Categories#edit</h1>
-<p>Find me in app/views/categories/edit.html.erb</p>
+<div class= "container-fluid">
+
+  <div class= "row">
+    <div class="col-md-4 offset-md-4 text-center">
+      <h3>ジャンル編集</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 offset-md-3 text-center">
+       <%= render "sellers/categories/form", category: @category %>
+    </div>
+  </div>
+
+</div>
