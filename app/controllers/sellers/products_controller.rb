@@ -11,7 +11,7 @@ class Sellers::ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to sellers_product_path, notice: "商品を追加しました"
+      redirect_to sellers_product_path(@product), notice: "商品を追加しました"
     else
       render :new
     end
@@ -33,7 +33,6 @@ class Sellers::ProductsController < ApplicationController
 
 
   private
-
   def product_params
       params.require(:product).permit(:category_id, :name, :introduction, :price, :image, :is_active)
   end
