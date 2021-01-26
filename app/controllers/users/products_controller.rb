@@ -18,5 +18,8 @@ class Users::ProductsController < ApplicationController
   end
 
   def show
+  	@product = Product.find(params[:id])
+		@categories = Category.all
+		@cart_product = CartProduct.new
   end
 end
